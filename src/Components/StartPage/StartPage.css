@@ -1,4 +1,8 @@
-.Carousel-container{
+.Startpage-header{
+    text-align: center;
+}
+
+.Startpage-Carousel-container{
     height: 35vh;
     width: 100%;
 }
