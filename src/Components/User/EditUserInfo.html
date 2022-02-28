@@ -58,7 +58,10 @@
         onClick="history.back(-1)"
       />
     </div>
-
+    <script
+      type="text/javascript"
+      src="/src/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"
+    ></script>
     <script type="text/javascript">
       let name = localStorage.getItem("name");
       let email = localStorage.getItem("email");
@@ -86,7 +89,7 @@
         // console.log("passwordRe: " + passwordRe);
 
         // If input passwords match, save all the information and go back.
-        if (password == passwordRe) {
+        if (password === passwordRe) {
           localStorage.setItem("name", name);
           localStorage.setItem("email", email);
           localStorage.setItem("password", password);
