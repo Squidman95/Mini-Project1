@@ -6,3 +6,7 @@
     height: 35vh;
     width: 100%;
 }
+
+.carousel-item:hover {
+    cursor:pointer;
+}

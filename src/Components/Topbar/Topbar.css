@@ -1,0 +1,13 @@
+#logged_out_elements {
+    display: flex;
+    flex-direction: row;
+}
+
+#logged_in_elements {
+    display: flex;
+    flex-direction: row;
+}
+
+.collapse {
+    justify-content: flex-end;
+}
