@@ -9,6 +9,16 @@
     <link href="./User.css" rel="stylesheet" />
   </head>
   <body>
+    <!-- The following 7 lines are to avoid having to recreate the navbar every time. Replace with the contents of Topbar.html body when done if we don't want to have jquery in the final version -->
+    <div id="nav-placeholder"></div>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script>
+      $.get("/src/Components/Topbar/Topbar.html", function (data) {
+        $("#nav-placeholder").replaceWith(data);
+      });
+    </script>
+    <!-- Topbar End -->
+
     <div class="container">
       <h1 class="text-center">Log in</h1>
 
