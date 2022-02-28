@@ -1,0 +1,12 @@
+.search-result-header{
+    text-align: center;
+}
+
+.search-result-Carousel-container{
+    height: 25vh;
+    width: 100%;
+}
+
+.search-result-Cards{
+    width: 90%;
+}
