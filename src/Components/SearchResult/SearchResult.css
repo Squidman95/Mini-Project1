@@ -10,3 +10,8 @@
 .search-result-Cards{
     width: 90%;
 }
+
+.carousel-item:hover, .card:hover {
+    cursor:pointer;
+}
+
