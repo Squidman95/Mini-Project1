@@ -1,51 +1,101 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="/src/bootstrap-5.1.3-dist/css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="./StartPage.css" rel="stylesheet"/>
-        <title>Hello, world!</title>
-    </head>
-    <body>
-        <div class="Startpage-header">
-            <h1>Pet store shop</h1>
-            <p id="welcomeText">Hello and welcome to the biggest pet store in the world!!!</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="/src/bootstrap-5.1.3-dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="./StartPage.css" rel="stylesheet" />
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="Startpage-header">
+      <h1>A pet store shop</h1>
+      <p id="welcomeText">
+        Hello and welcome to the biggest pet store in the world!!!
+      </p>
+    </div>
+
+    <div class="Startpage-Carousel-container">
+      <div
+        id="carouselExampleControlsNoTouching"
+        class="carousel carousel-dark h-100 w-100 slide"
+        data-bs-touch="false"
+        data-bs-interval="false"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
         </div>
+        <div class="carousel-inner h-100 w-100">
+          <div class="carousel-item h-100 w-100 active">
+            <img
+              src="https://m.media-amazon.com/images/I/81753eskvxL._AC_SX466_.jpg"
+              class="d-block w-auto h-75 mx-auto"
+              alt="someDescribtion"
+            />
+          </div>
 
-        <div class="Startpage-Carousel-container">
-            <div id="carouselExampleControlsNoTouching" class="carousel carousel-dark h-100 w-100 slide" data-bs-touch="false" data-bs-interval="false">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                  </div>
-                <div class="carousel-inner h-100 w-100">
+          <div class="carousel-item h-100 w-100">
+            <img
+              src="https://www.dfordog.co.uk/user/products/red-dingo-dog-collar-red.jpg"
+              class="d-block w-auto h-85 mx-auto"
+              alt="someDescribtion"
+            />
+          </div>
 
-                    <div class="carousel-item h-100 w-100 active">
-                        <img src="https://m.media-amazon.com/images/I/81753eskvxL._AC_SX466_.jpg" class="d-block w-auto h-75 mx-auto" alt="someDescribtion">
-                    </div>
-
-                    <div class="carousel-item h-100 w-100">
-                        <img src="https://www.dfordog.co.uk/user/products/red-dingo-dog-collar-red.jpg" class="d-block w-auto h-85 mx-auto" alt="someDescribtion">
-                    </div>
-
-                    <div class="carousel-item h-100 w-100">
-                        <img src="https://m.media-amazon.com/images/I/81amc1cWs0L._AC_SL1500_.jpg" class="d-block w-auto h-75 mx-auto" alt="someDescribtion">
-                    </div>
-
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>    
+          <div class="carousel-item h-100 w-100">
+            <img
+              src="https://m.media-amazon.com/images/I/81amc1cWs0L._AC_SL1500_.jpg"
+              class="d-block w-auto h-75 mx-auto"
+              alt="someDescribtion"
+            />
+          </div>
         </div>
-        <script type="text/javascript" src="/src/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControlsNoTouching"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControlsNoTouching"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="/src/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"
+    ></script>
+  </body>
 </html>
