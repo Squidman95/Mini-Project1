@@ -32,11 +32,8 @@
 
     <script type="module">
         import {products} from '/src/Data/Basket.js';
-        console.log(products);
 
         let container = document.getElementById('BasketItemContainer');
-
-        console.log(typeof(products));
 
         products.forEach((item, index) => {
             //Create elements
@@ -62,7 +59,7 @@
 
             descr.classList.add("description");
 
-
+            remove.onClick = function(index) { products.remove(index); }
 
             itemContainer.appendChild(img);
             itemContainer.appendChild(descr);
