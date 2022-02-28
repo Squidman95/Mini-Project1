@@ -1,5 +1,5 @@
 function loadNavBar() {
-    $.get("/topMenu/navigationBar.html", function (data) {
+    $.get("/src/Components/Topbar/Topbar.html", function (data) {
         $("#nav-placeholder").replaceWith(data);
       });
 }
