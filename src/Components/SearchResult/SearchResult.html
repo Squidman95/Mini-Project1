@@ -62,7 +62,7 @@
                         ></button>
                     </div>
                     <div class="carousel-inner h-100 w-100">
-                        <div class="carousel-item h-100 w-100 active" onClick="return clickProduct();">
+                        <div class="carousel-item h-100 w-100 active" onClick="return clickProduct(0);">
                             <img
                                 src="https://m.media-amazon.com/images/I/81753eskvxL._AC_SX466_.jpg"
                                 class="d-block w-auto h-75 mx-auto"
@@ -70,7 +70,7 @@
                             />
                         </div>
 
-                        <div class="carousel-item h-100 w-100" onClick="return clickProduct();">
+                        <div class="carousel-item h-100 w-100" onClick="return clickProduct(1);">
                             <img
                                 src="https://www.dfordog.co.uk/user/products/red-dingo-dog-collar-red.jpg"
                                 class="d-block w-auto h-75 mx-auto"
@@ -78,7 +78,7 @@
                             />
                         </div>
 
-                        <div class="carousel-item h-100 w-100" onClick="return clickProduct();">
+                        <div class="carousel-item h-100 w-100" onClick="return clickProduct(2);">
                             <img
                                 src="https://m.media-amazon.com/images/I/81amc1cWs0L._AC_SL1500_.jpg"
                                 class="d-block w-auto h-75 mx-auto"
@@ -139,7 +139,7 @@
                             ></button>
                         </div>
                         <div class="carousel-inner h-100 w-100">
-                            <div class="carousel-item h-100 w-100 active" onClick="return clickProduct();">
+                            <div class="carousel-item h-100 w-100 active" onClick="return clickProduct(0);">
                                 <img
                                     src="https://m.media-amazon.com/images/I/81753eskvxL._AC_SX466_.jpg"
                                     class="d-block w-auto h-75 mx-auto"
@@ -147,7 +147,7 @@
                                 />
                             </div>
 
-                            <div class="carousel-item h-100 w-100" onClick="return clickProduct();">
+                            <div class="carousel-item h-100 w-100" onClick="return clickProduct(0);">
                                 <img
                                     src="https://www.dfordog.co.uk/user/products/red-dingo-dog-collar-red.jpg"
                                     class="d-block w-auto h-75 mx-auto"
@@ -155,7 +155,7 @@
                                 />
                             </div>
 
-                            <div class="carousel-item h-100 w-100" onClick="return clickProduct();">
+                            <div class="carousel-item h-100 w-100" onClick="return clickProduct(0);">
                                 <img
                                     src="https://m.media-amazon.com/images/I/81amc1cWs0L._AC_SL1500_.jpg"
                                     class="d-block w-auto h-75 mx-auto"
@@ -192,7 +192,7 @@
         <div class="search-result-Cards align-self-center">
             <div class="row row-cols-3 row-cols-sm-3 g-3">
                 <div class="col">
-                    <div class="card" onClick="return clickProduct();">
+                    <div class="card" onClick="return clickProduct(0);">
                         <img src="/src/assets/images/dog/dog_bed.jpg" class="card-img-top" alt="card-grid-image">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -201,7 +201,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card" onClick="return clickProduct();">
+                    <div class="card" onClick="return clickProduct(0);">
                         <img src="/src/assets/images/dog/dog_bed.jpg" class="card-img-top" alt="card-grid-image">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -210,7 +210,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card" onClick="return clickProduct();">
+                    <div class="card" onClick="return clickProduct(0);">
                         <img src="/src/assets/images/dog/dog_bed.jpg" class="card-img-top" alt="card-grid-image">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -219,7 +219,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card" onClick="return clickProduct();">
+                    <div class="card" onClick="return clickProduct(0);">
                         <img src="/src/assets/images/dog/dog_bed.jpg" class="card-img-top" alt="card-grid-image">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -228,7 +228,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card" onClick="return clickProduct();">
+                    <div class="card" onClick="return clickProduct(0);">
                         <img src="/src/assets/images/dog/dog_bed.jpg" class="card-img-top" alt="card-grid-image">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -237,7 +237,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card" onClick="return clickProduct();">
+                    <div class="card" onClick="return clickProduct(0);">
                         <img src="/src/assets/images/dog/dog_bed.jpg" class="card-img-top" alt="card-grid-image">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -254,8 +254,8 @@
         src="/src/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"
     ></script>
     <script>
-        function clickProduct(){
-            location.href='/src/Components/Product/Product.html';
+        function clickProduct(product){
+            location.href=`/src/Components/Product/Product.html?product=${product}`;
         }
     </script>
 </body>
