@@ -23,43 +23,49 @@
       <h1 class="text-center">Log in</h1>
 
       <div class="mx-auto">
-        <form action="/src/Components/StartPage/StartPage.html">
-          <label for="email">Email:</label><br />
-          <input
-            class="form-control mx-auto"
-            type="text"
-            id="email"
-            name="email"
-          /><br />
+        <!-- <form action="/src/Components/StartPage/StartPage.html"> -->
+        <label for="email">Email:</label><br />
+        <input
+          class="form-control mx-auto"
+          type="text"
+          id="email"
+          name="email"
+        /><br />
 
-          <label for="password">Password:</label><br />
-          <input
-            class="form-control mx-auto"
-            type="text"
-            id="password"
-            name="password"
-          /><br />
+        <label for="password">Password:</label><br />
+        <input
+          class="form-control mx-auto"
+          type="text"
+          id="password"
+          name="password"
+        /><br />
 
-          <input
-            class="btn btn-primary"
-            type="submit"
-            onClick="history.back(-1)"
-            value="Login!"
-          />
+        <input
+          class="btn btn-primary"
+          type="submit"
+          onClick="login()"
+          value="Login!"
+        />
 
-          <input
-            type="button"
-            class="btn btn-secondary m-3"
-            value="Cancel"
-            onClick="history.back(-1)"
-          />
+        <input
+          type="button"
+          class="btn btn-secondary m-3"
+          value="Cancel"
+          onClick="history.back(-1)"
+        />
 
-          <br />
-          <a href="/src/Components/User/SignupPage.html">
-            Don't have an account? Sign up instead.
-          </a>
-        </form>
+        <br />
+        <a href="/src/Components/User/SignupPage.html">
+          Don't have an account? Sign up instead.
+        </a>
+        <!-- </form> -->
       </div>
     </div>
+    <script>
+      function login() {
+        localStorage.setItem("isLoggedIn", "true");
+        location.href = "/src/Components/StartPage/StartPage.html";
+      }
+    </script>
   </body>
 </html>

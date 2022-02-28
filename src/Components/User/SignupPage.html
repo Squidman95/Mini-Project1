@@ -80,11 +80,12 @@
         // console.log("passwordRe: " + passwordRe);
 
         // If input passwords match, save all the information and go back.
-        if (password == passwordRe) {
+        if (password === passwordRe) {
           localStorage.setItem("name", name);
           localStorage.setItem("email", email);
           localStorage.setItem("password", password);
-          action = "/src/Components/User/EditUserInfo.html";
+          localStorage.setItem("isLoggedIn", "true");
+          location.href = "/src/Components/StartPage/StartPage.html";
           // history.back(-1); // Navigate back to where you tried to login from. If it's a pop up, this shouldn't matter and should just close down
           //   console.log("name: " + localStorage.getItem("name"));
           //   console.log("email: " + localStorage.getItem("email"));
