@@ -125,7 +125,7 @@
 
       cart_count.innerHTML = selectedProducts.length;
 
-      if (loggedIn == "true") {
+      if (loggedIn != null && loggedIn === "true") {
         console.log(`Logged in ${loggedIn}`);
         logged_in_elements.style.display = "flex";
         logged_out_elements.style.display = "none";
