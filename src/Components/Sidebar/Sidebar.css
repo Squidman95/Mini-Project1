@@ -15,7 +15,9 @@
     max-width: 250px;
   }
 
-  
+  .Sidebar::-webkit-scrollbar{
+    display: none;
+  }  
 
   img {
     max-width: 100px;
