@@ -1,9 +1,8 @@
 .Startpage-content{
     display:flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
-    
 }
 
 .Startpage-maincontent{
@@ -20,13 +19,15 @@
 .Startpage-Carousel-container{
     height: 35vh;
     width: 100%;
-
 }
 
 .carousel-item:hover {
     cursor:pointer;
 }
 
+img{
+    object-fit: contain;
+}
 
 
 
