@@ -22,10 +22,10 @@
 
           </div>
           <div class="smaller-images">
-            <div class="smaller-image" id="smaller-image-1">
+            <div class="smaller-image" id="smaller-image-1" onClick="clickProduct(1);">
 
             </div>
-            <div class="smaller-image" id="smaller-image-2">
+            <div class="smaller-image" id="smaller-image-2" onClick="clickProduct(2);">
 
             </div>
           </div>
@@ -45,55 +45,25 @@
       </div>
     </section>
 
-    <!-- <article class="container main-container">
-        <section class="row">
-          <div class="col-sm">
-            <div id="product-content">
-            <figure>
-                <img id="productPageImgMain" class="main-img img-fluid" src="/src/assets/images/bird/bird.jpg" alt="A bird">
-            <figure>
-            </div>
-            <div class="small-img-container">
-                <figure>
-                    <img class="small-img img-fluid" id="productPageImgLeft" src="/src/assets/images/bird/bird_cage.jpg" alt="A bird cage">
-                </figure>
-                <figure>
-                    <img class="small-img img-fluid" id="productPageImgRight" src="/src/assets/images/bird/bird_cage.jpg" alt="A bird cage">
-                </figure>
-            </div>
-            <div>
-                <h3>Product name</h3>
-                <p>Sales pitch</p>
-            </div>
-          </div>
-          <div class="col-sm">
-            <div class="product-info-container">
-                <h3>Product details</h3>
-                <ul>
-                  <p>Product Fact 1<p>
-                  <p>Product Fact 2<p>
-                  <p>Product Fact 3<p>
-                  </ul>
-            </div>
-            <div class="button-container">
-                <button class="btn btn-outline-primary">Add to basket</button>
-            <button class="btn btn-primary">Buy right away</button>
-            </div>
-          </div>
-        </section>
-    </article> -->
+
+
     <script
       type="text/javascript"
       src="/src/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"
     ></script>
 
     <script src="//code.jquery.com/jquery.min.js"></script>
-        <script>
-            $.get("/src/Components/Topbar/Topbar.html", function (data) {
-              $("#product-topbar").replaceWith(data);
-            });
-        </script>
-        
+    <script>
+        $.get("/src/Components/Topbar/Topbar.html", function (data) {
+          $("#product-topbar").replaceWith(data);
+        });
+    </script>
+    <script>
+      function clickProduct(product){
+          location.href=`/src/Components/Product/Product.html?product=${product}`;
+      }
+    </script>    
+
 
     <script type="module">
       let param = parent.document.URL.substring(parent.document.URL.indexOf('?') + 1, parent.document.URL.length);
@@ -101,8 +71,8 @@
       let mayAlsoLikeProductId1, mayAlsoLikeProductId2;
 
       if(productId <= 1){
-        mayAlsoLikeProductId1 = productId + 1;
-        mayAlsoLikeProductId2 = productId + 2;
+        mayAlsoLikeProductId1 = parseInt(productId) + 1;
+        mayAlsoLikeProductId2 = parseInt(productId) + 2;
       } else {
         mayAlsoLikeProductId1 = productId - 1;
         mayAlsoLikeProductId2 = productId - 2;

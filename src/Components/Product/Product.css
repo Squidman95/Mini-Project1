@@ -50,6 +50,11 @@ img{
   justify-content: space-evenly;
 }
 
+.smaller-images:hover{
+  cursor:pointer;
+  
+}
+
 .smaller-image{
   width: 40%;
   height: auto;
