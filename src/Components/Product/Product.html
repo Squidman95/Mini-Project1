@@ -12,6 +12,13 @@
     <title>Document</title>
   </head>
   <body>
+    <div id="nav-placeholder"></div>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script>
+      $.get("/src/Components/Topbar/Topbar.html", function (data) {
+        $("#nav-placeholder").replaceWith(data);
+      });
+    </script>
     <article class="container main-container">
         <section class="row">
           <div class="col-sm">
