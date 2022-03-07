@@ -11,3 +11,11 @@
 .collapse {
     justify-content: flex-end;
 }
+
+.basket-img {
+    width: 25px;
+  }
+
+.navbar {
+    height: 5%;
+}
