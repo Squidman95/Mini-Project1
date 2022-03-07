@@ -7,7 +7,7 @@
     /> -->
     <link href="/src/Components/Topbar/Topbar.css" rel="stylesheet" />
   </head>
-  <body>
+  <body onload="displayUserName()">
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="/src/Components/StartPage/StartPage.html"
@@ -45,6 +45,7 @@
 
             <!-- Logged in elements -->
             <div id="logged_in_elements">
+              <p id="userNameSpot"></p>
               <li class="nav-item">
                 <a
                   class="nav-link"
@@ -91,13 +92,20 @@
             </div>
             <!-- Logged in end -->
 
-            <a href="/src/Components/Basket/Basket.html">
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="location.href='/src/Components/Basket/Basket.html';"
+            >
+              <!-- <a href="/src/Components/Basket/Basket.html"> -->
               <img
                 alt="Qries"
                 src="/src/assets/images/icons/basket-icon.png"
                 class="basket-img"
               />
-            </a>
+              <!-- </a> -->
+              <span class="badge badge-light" id="cart-count">0</span>
+            </button>
           </ul>
         </div>
       </div>
@@ -106,6 +114,15 @@
       let loggedIn = localStorage.getItem("isLoggedIn");
       let logged_in_elements = document.getElementById("logged_in_elements");
       let logged_out_elements = document.getElementById("logged_out_elements");
+      let cart_count = document.getElementById("cart-count");
+      let selectedProducts = JSON.parse(
+        localStorage.getItem("selectedProducts")
+      );
+      let name = localStorage.getItem("name");
+
+      document.getElementById("userNameSpot").innerHTML = "Hello " + name;
+
+      cart_count.innerHTML = selectedProducts.length;
 
       if (loggedIn == "true") {
         console.log(`Logged in ${loggedIn}`);
