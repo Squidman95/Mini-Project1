@@ -14,29 +14,26 @@
   <body>
     <div id="product-topbar"></div>
 
-
     <section>
       <div class="product-content-container">
         <div class="left">
-          <div id="main-img">
-
-          </div>
+          <div id="main-img"></div>
           <div class="smaller-images">
-            <div class="smaller-image" id="smaller-image-1" onClick="clickProduct(1);">
-
-            </div>
-            <div class="smaller-image" id="smaller-image-2" onClick="clickProduct(2);">
-
-            </div>
+            <div
+              class="smaller-image"
+              id="smaller-image-1"
+              onClick="clickProduct(1);"
+            ></div>
+            <div
+              class="smaller-image"
+              id="smaller-image-2"
+              onClick="clickProduct(2);"
+            ></div>
           </div>
-          <article id="product-description-left">
-
-          </article>
+          <article id="product-description-left"></article>
         </div>
         <div class="right">
-          <article id="product-description-right">
-
-          </article>
+          <article id="product-description-right"></article>
           <div class="button-container">
             <button class="btn btn-outline-primary">Add to basket</button>
             <button class="btn btn-primary">Buy right away</button>
@@ -45,8 +42,6 @@
       </div>
     </section>
 
-
-
     <script
       type="text/javascript"
       src="/src/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"
@@ -54,23 +49,27 @@
 
     <script src="//code.jquery.com/jquery.min.js"></script>
     <script>
-        $.get("/src/Components/Topbar/Topbar.html", function (data) {
-          $("#product-topbar").replaceWith(data);
-        });
+      $.get("/src/Components/Topbar/Topbar.html", function (data) {
+        $("#product-topbar").replaceWith(data);
+      });
     </script>
     <script>
-      function clickProduct(product){
-          location.href=`/src/Components/Product/Product.html?product=${product}`;
+      function clickProduct(product) {
+        location.href = `/src/Components/Product/Product.html?product=${product}`;
       }
-    </script>    
-
+    </script>
 
     <script type="module">
-      let param = parent.document.URL.substring(parent.document.URL.indexOf('?') + 1, parent.document.URL.length);
-      let productId = param.includes("product") ? param.substring(param.indexOf("=")  + 1 ) : null;
+      let param = parent.document.URL.substring(
+        parent.document.URL.indexOf("?") + 1,
+        parent.document.URL.length
+      );
+      let productId = param.includes("product")
+        ? param.substring(param.indexOf("=") + 1)
+        : null;
       let mayAlsoLikeProductId1, mayAlsoLikeProductId2;
 
-      if(productId <= 1){
+      if (productId <= 1) {
         mayAlsoLikeProductId1 = parseInt(productId) + 1;
         mayAlsoLikeProductId2 = parseInt(productId) + 2;
       } else {
@@ -78,37 +77,37 @@
         mayAlsoLikeProductId2 = productId - 2;
       }
 
-      import {products} from '/src/Data/ProductData.js';
+      import { products } from "/src/Data/ProductData.js";
 
-
-      let imgMain = document.createElement('img');
+      let imgMain = document.createElement("img");
       imgMain.src = products[productId].image;
 
-      let mayAlsoLikeProductImg1 = document.createElement('img');
+      let mayAlsoLikeProductImg1 = document.createElement("img");
       mayAlsoLikeProductImg1.src = products[mayAlsoLikeProductId1].image;
 
-      let mayAlsoLikeProductImg2 = document.createElement('img');
+      let mayAlsoLikeProductImg2 = document.createElement("img");
       mayAlsoLikeProductImg2.src = products[mayAlsoLikeProductId2].image;
 
-      let description = document.createElement('p');
+      let description = document.createElement("p");
       description.innerHTML = products[productId].description;
 
       let leftDescription = document.getElementById("product-description-left");
-      leftDescription.innerHTML = "THIS IS A DESCRIPTION Y'ALL! PLEASE MAKE ME MORE DYNAMIC"
+      leftDescription.innerHTML =
+        "THIS IS A DESCRIPTION Y'ALL! PLEASE MAKE ME MORE DYNAMIC";
 
+      let mainImageContainer = document.getElementById("main-img");
+      let descriptionRightContainer = document.getElementById(
+        "product-description-right"
+      );
 
-      let mainImageContainer = document.getElementById('main-img');
-      let descriptionRightContainer = document.getElementById('product-description-right');
-
-      let mayLikeImageContainer1 = document.getElementById('smaller-image-1');
-      let mayLikeImageContainer2 = document.getElementById('smaller-image-2');
+      let mayLikeImageContainer1 = document.getElementById("smaller-image-1");
+      let mayLikeImageContainer2 = document.getElementById("smaller-image-2");
 
       mainImageContainer.appendChild(imgMain);
       descriptionRightContainer.appendChild(description);
 
       mayLikeImageContainer1.appendChild(mayAlsoLikeProductImg1);
       mayLikeImageContainer2.appendChild(mayAlsoLikeProductImg2);
-
-  </script>
+    </script>
   </body>
 </html>
