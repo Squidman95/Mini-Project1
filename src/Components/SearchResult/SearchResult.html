@@ -346,31 +346,60 @@
     </script>
 
     <script type="module">
+
+        // IMPORT AND VARIABLES
+
         let param = parent.document.URL.substring(parent.document.URL.indexOf('?') + 1, parent.document.URL.length);
-        let animalName = param.includes("animal") ? param.substring(param.indexOf("=")  + 1 ) : null;
+        let params = param.split("&");
+        let animalName;
+        let priceMin;
+        let priceMax;
+        params.forEach((param, index) => {
+            if(param.includes("animal")){
+                animalName = param.substring(param.indexOf("=")  + 1 );
+            }
+            if(param.includes("minPrice")){
+                priceMin = param.substring(param.indexOf("=")  + 1 );
+            }
+            if(param.includes("maxPrice")){
+                priceMax = param.substring(param.indexOf("=")  + 1 );
+            }
+        });
+        
         import {products} from '/src/Data/ProductData.js';
 
-        console.log(animalName)
 
-        let dog = [0, 1, 2, 3, 4, 5];
-        let cat = [6, 7, 8, 9];
-        let bird = [10, 11, 12];
-        let rodent = [13, 14, 15, 16];
-        let animals;
-        switch(animalName){
-            case 'dog': animals = dog; break;
-            case 'cat': animals = cat; break;
-            case 'bird': animals = bird; break;
-            case 'rodent': animals = rodent; break;
+        // FUNCTIONLITY
+
+        let productsVar = getFilteredItems();
+        if(priceMin !== null && priceMin !== undefined && priceMin !== "" && priceMax !== null && priceMax !== undefined && priceMax !== ""){
+            productsVar = getPriceFilteredItems(productsVar, priceMin, priceMax);
         }
 
-        addImageToCarousel(animals[0], "carousel-container-1");
-        addImageToCarousel(animals[1], "carousel-container-2");
-        addImageToCarousel(animals[2], "carousel-container-3");
-        
+        productsVar.forEach((item) => {
+            addCardToPage(products[item.id]);
+        });
+
+        if(productsVar.length >= 1) addImageToCarousel(productsVar[0].id, "carousel-container-1");
+        if(productsVar.length >= 2) addImageToCarousel(productsVar[1].id, "carousel-container-2");
+        if(productsVar.length >= 3) addImageToCarousel(productsVar[2].id, "carousel-container-3");
+
+
+        //FUNCTIONS
+
+        function getFilteredItems(){
+            return products.filter(function(el) {
+                return el.animal === animalName;
+            })
+        }
+
+        function getPriceFilteredItems(productsVar, priceMin, priceMax){
+            return productsVar.filter(function(el) {
+                return el.price >= priceMin && el.price <= priceMax;
+            });
+        }
 
         function addImageToCarousel(index, item){
-            console.log(index, item);
             let img = document.createElement('img');
             img.src = products[index].image;
             img.classList.add('d-block');
@@ -379,10 +408,6 @@
             img.classList.add('mx-auto');
             document.getElementById(item).appendChild(img);
         }
-
-        animals.forEach((animal, index) => {
-            addCardToPage(products[animal]);
-        });
 
         function addCardToPage(data){
             let parent = document.createElement('div');
@@ -417,8 +442,6 @@
 
             document.getElementById('cardContainer').appendChild(parent);
         }
-
-
     </script>
 </body>
 </html>

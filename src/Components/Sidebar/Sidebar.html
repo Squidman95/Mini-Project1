@@ -18,10 +18,10 @@
             <h5 class="filter-text">Animals     </h5>
 
             <div class="dd-flex align-items-start bd-highlight mb-2">
-                <img src="/src/assets/images/dog/dog.jpg" class="float-start p-2 bd-highlight" alt="dog" onClick="selectAnimal('dog')">
-                <img src="/src/assets/images/cat/cat.jpg" class=" float-start p-2 bd-highlight" alt="cat" onClick="selectAnimal('cat')">
-                <img src="/src/assets/images/bird/bird.jpg" class=" float-start p-2 bd-highlight" alt="bird" onClick="selectAnimal('bird')">
-                <img src="/src/assets/images/rodent/rodent.jpg" class=" float-start p-2 bd-highlight" alt="rodent" onClick="selectAnimal('rodent')">
+                <img src="/src/assets/images/dog/dog.jpg" class="float-start p-2 bd-highlight" alt="dog" onClick="selectAnimal('Dog')">
+                <img src="/src/assets/images/cat/cat.jpg" class=" float-start p-2 bd-highlight" alt="cat" onClick="selectAnimal('Cat')">
+                <img src="/src/assets/images/bird/bird.jpg" class=" float-start p-2 bd-highlight" alt="bird" onClick="selectAnimal('Bird')">
+                <img src="/src/assets/images/rodent/rodent.jpg" class=" float-start p-2 bd-highlight" alt="rodent" onClick="selectAnimal('Rodent')">
             </div>
         </div>
 
@@ -103,8 +103,22 @@
 
       <script>
         function selectAnimal(animal) {
-          location.href = `/src/Components/SearchResult/SearchResult.html?animal=${animal}`;
+          let minPrice = document.getElementById("minPrice").value;
+          let maxPrice = document.getElementById("maxPrice").value;
+          let ref = `/src/Components/SearchResult/SearchResult.html?animal=${animal}`;
+          if( minPrice !== null && minPrice !== undefined && minPrice >= 0 && minPrice !== "" &&
+              maxPrice !== null && maxPrice !== undefined && maxPrice >= 0 && maxPrice !== ""
+          ){
+            ref += `&minPrice=${document.getElementById("minPrice").value}&maxPrice=${document.getElementById("maxPrice").value}`
+          } else {
+            ref = `/src/Components/SearchResult/SearchResult.html?animal=${animal}`;
+          }
+          location.href = ref;
         }
+      </script>
+
+      <script type="module">
+
       </script>
 
 </html>
