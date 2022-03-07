@@ -35,13 +35,16 @@
         <div class="right">
           <article id="product-description-right"></article>
           <div class="button-container">
-            <button class="btn btn-outline-primary" onclick="selectProduct();">
+            <button
+              class="btn btn-outline-primary"
+              type="button"
+              id="selectItemButton"
+            >
               Add to basket
             </button>
-            <button class="btn btn-success" type="button" id="buyButton">
+            <button class="btn btn-primary" type="button" id="buyButton">
               Buy right away
             </button>
-            <!-- <button class="btn btn-primary">Buy right away</button> -->
           </div>
         </div>
       </div>
@@ -70,11 +73,11 @@
       let imgMain = document.createElement("img");
       imgMain.src = products[productId].image;
 
-      // let mayAlsoLikeProductImg1 = document.createElement("img");
-      // mayAlsoLikeProductImg1.src = products[mayAlsoLikeProductId1].image;
+      let mayAlsoLikeProductImg1 = document.createElement("img");
+      mayAlsoLikeProductImg1.src = products[mayAlsoLikeProductId1].image;
 
-      // let mayAlsoLikeProductImg2 = document.createElement("img");
-      // mayAlsoLikeProductImg2.src = products[mayAlsoLikeProductId2].image;
+      let mayAlsoLikeProductImg2 = document.createElement("img");
+      mayAlsoLikeProductImg2.src = products[mayAlsoLikeProductId2].image;
 
       let description = document.createElement("p");
       description.innerHTML = products[productId].shortDescription;
@@ -97,6 +100,12 @@
       mayLikeImageContainer2.appendChild(mayAlsoLikeProductImg2);
 
       document
+        .getElementById("selectItemButton")
+        .addEventListener("click", function () {
+          selectProduct();
+        });
+
+      document
         .getElementById("buyButton")
         .addEventListener("click", function () {
           selectProduct();
@@ -104,14 +113,19 @@
       function selectProduct() {
         console.log("Clicked");
         console.log("Product ID:" + productId);
-        let selectedProducts = localStorage.getItem("selectedProducts");
+        let selectedProducts = JSON.parse(
+          localStorage.getItem("selectedProducts")
+        );
+        // let selectedProducts = localStorage.getItem("selectedProducts");
         if (selectedProducts === null) {
           console.log("No products selected, making new array");
           selectedProducts = [];
         }
         selectedProducts[selectedProducts.length] = products[productId];
 
+        console.log("Num of saved items:" + selectedProducts.length);
         console.log(selectedProducts[selectedProducts.length - 1]);
+
         localStorage.setItem(
           "selectedProducts",
           JSON.stringify(selectedProducts)
