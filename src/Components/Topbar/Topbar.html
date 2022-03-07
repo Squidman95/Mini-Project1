@@ -130,5 +130,17 @@
         localStorage.setItem("isLoggedIn", "false");
       }
     </script>
+    <script>
+      function displayUserName() {
+        console.log("hello");
+        userName = window.localStorage.getItem("name");
+        console.log(userName);
+        if (userName !== null && userName !== "") {
+          console.log("its not null");
+          welcomeBanner = document.getElementById("welcomeText");
+          console.log(welcomeBanner);
+        }
+      }
+    </script>
   </body>
 </html>
