@@ -121,7 +121,11 @@
       );
       let name = localStorage.getItem("name");
 
-      cart_count.innerHTML = selectedProducts.length;
+      if (selectedProducts != null) {
+        cart_count.innerHTML = selectedProducts.length;
+      } else {
+        cart_count.innerHTML = 0;
+      }
 
       if (loggedIn != null && loggedIn === "true") {
         document.getElementById("userNameSpot").innerHTML = "Hello " + name;
