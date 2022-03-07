@@ -25,6 +25,8 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
+        <p id="userNameSpot"></p>
+
         <!-- <div class="collapse navbar-collapse show" id="navbarWithDropdown"> -->
         <div class="collapse navbar-collapse show" id="navbarWithDropdown">
           <ul class="navbar-nav">
@@ -45,7 +47,6 @@
 
             <!-- Logged in elements -->
             <div id="logged_in_elements">
-              <p id="userNameSpot"></p>
               <li class="nav-item">
                 <a
                   class="nav-link"
@@ -120,11 +121,14 @@
       );
       let name = localStorage.getItem("name");
 
-      document.getElementById("userNameSpot").innerHTML = "Hello " + name;
+      if (selectedProducts != null) {
+        cart_count.innerHTML = selectedProducts.length;
+      } else {
+        cart_count.innerHTML = 0;
+      }
 
-      cart_count.innerHTML = selectedProducts.length;
-
-      if (loggedIn == "true") {
+      if (loggedIn != null && loggedIn === "true") {
+        document.getElementById("userNameSpot").innerHTML = "Hello " + name;
         console.log(`Logged in ${loggedIn}`);
         logged_in_elements.style.display = "flex";
         logged_out_elements.style.display = "none";
