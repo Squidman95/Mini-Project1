@@ -48,13 +48,18 @@
 
     <script type="module">
       // Get saved items from localStorage:
-      //   var savedItems = JSON.parse(localStorage.getItem("names"));
+      let selectedProducts = JSON.parse(
+        localStorage.getItem("selectedProducts")
+      );
+
+      console.log(selectedProducts);
 
       import { products } from "/src/Data/ProductData.js";
 
       let container = document.getElementById("BasketItemContainer");
 
-      products.forEach((item, index) => {
+      //   products.forEach((item, index) => {
+      selectedProducts.forEach((item, index) => {
         //Create elements
         let itemContainer = document.createElement("div");
         let img = document.createElement("img");
