@@ -89,11 +89,10 @@
       mayAlsoLikeProductImg2.src = products[mayAlsoLikeProductId2].image;
 
       let description = document.createElement("p");
-      description.innerHTML = products[productId].description;
+      description.innerHTML = products[productId].shortDescription;
 
       let leftDescription = document.getElementById("product-description-left");
-      leftDescription.innerHTML =
-        "THIS IS A DESCRIPTION Y'ALL! PLEASE MAKE ME MORE DYNAMIC";
+      leftDescription.innerHTML = products[productId].longDescription;
 
       let mainImageContainer = document.getElementById("main-img");
       let descriptionRightContainer = document.getElementById(
