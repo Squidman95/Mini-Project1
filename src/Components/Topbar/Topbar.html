@@ -99,7 +99,7 @@
                   class="basket-img"
                 />
               </a>
-              <span class="badge badge-light" id="cart-count">4</span>
+              <span class="badge badge-light" id="cart-count">0</span>
             </button>
           </ul>
         </div>
@@ -109,6 +109,12 @@
       let loggedIn = localStorage.getItem("isLoggedIn");
       let logged_in_elements = document.getElementById("logged_in_elements");
       let logged_out_elements = document.getElementById("logged_out_elements");
+      let cart_count = document.getElementById("cart-count");
+      let selectedProducts = JSON.parse(
+        localStorage.getItem("selectedProducts")
+      );
+
+      cart_count.innerHTML = selectedProducts.length;
 
       if (loggedIn == "true") {
         console.log(`Logged in ${loggedIn}`);
