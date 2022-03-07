@@ -47,6 +47,9 @@
     ></script>
 
     <script type="module">
+      // Get saved items from localStorage:
+      //   var savedItems = JSON.parse(localStorage.getItem("names"));
+
       import { products } from "/src/Data/Basket.js";
 
       let container = document.getElementById("BasketItemContainer");
