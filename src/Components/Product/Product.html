@@ -90,14 +90,14 @@
         "product-description-right"
       );
 
-      let mayLikeImageContainer1 = document.getElementById("smaller-image-1");
-      let mayLikeImageContainer2 = document.getElementById("smaller-image-2");
+      // let mayLikeImageContainer1 = document.getElementById("smaller-image-1");
+      // let mayLikeImageContainer2 = document.getElementById("smaller-image-2");
 
       mainImageContainer.appendChild(imgMain);
       descriptionRightContainer.appendChild(description);
 
-      mayLikeImageContainer1.appendChild(mayAlsoLikeProductImg1);
-      mayLikeImageContainer2.appendChild(mayAlsoLikeProductImg2);
+      // mayLikeImageContainer1.appendChild(mayAlsoLikeProductImg1);
+      // mayLikeImageContainer2.appendChild(mayAlsoLikeProductImg2);
 
       document
         .getElementById("selectItemButton")
@@ -108,7 +108,7 @@
       document
         .getElementById("buyButton")
         .addEventListener("click", function () {
-          selectProduct();
+          buyProduct();
         });
       function selectProduct() {
         console.log("Clicked");
@@ -130,6 +130,11 @@
           "selectedProducts",
           JSON.stringify(selectedProducts)
         );
+        window.location.reload();
+      }
+      function buyProduct() {
+        selectProduct();
+        location.href = "/src/Components/Basket/Basket.html";
       }
     </script>
 
