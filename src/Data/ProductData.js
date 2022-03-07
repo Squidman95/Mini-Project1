@@ -99,7 +99,7 @@ export const products = [
     },
     {
         name: 'Cat toy - snack mouse',
-        id: '8',
+        id: '9',
         price: 30,
         animal: 'Cat',
         category: 'Toy',
@@ -110,7 +110,7 @@ export const products = [
     },
     {
         name: 'Bird Cage',
-        id: '9',
+        id: '10',
         price: 250,
         animal: 'Bird',
         category: 'Accessory',
@@ -121,7 +121,7 @@ export const products = [
     },
     {
         name: 'Bird Cage',
-        id: '10',
+        id: '11',
         price: 200,
         animal: 'Bird',
         category: 'Accessory',
@@ -132,7 +132,7 @@ export const products = [
     },
     {
         name: 'Bird Food',
-        id: '11',
+        id: '12',
         price: 110,
         animal: 'Bird',
         category: 'Food',
@@ -143,7 +143,7 @@ export const products = [
     },
     {
         name: 'Rodent Cage',
-        id: '12',
+        id: '13',
         price: 140,
         animal: 'Rodent',
         category: 'Accessory',
@@ -154,7 +154,7 @@ export const products = [
     },
     {
         name: 'Rodent Food',
-        id: '13',
+        id: '14',
         price: 100,
         animal: 'Rodent',
         category: 'Food',
@@ -165,7 +165,7 @@ export const products = [
     },
     {
         name: 'Rodent Bed',
-        id: '14',
+        id: '15',
         price: 40,
         animal: 'Rodent',
         category: 'Accessory',
@@ -176,7 +176,7 @@ export const products = [
     },
     {
         name: 'Rodent Toy - running wheel',
-        id: '15',
+        id: '16',
         price: 70,
         animal: 'Rodent',
         category: 'Toy',
