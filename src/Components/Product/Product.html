@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,7 +15,7 @@
     <article class="container main-container">
         <section class="row">
           <div class="col-sm">
-            <div>
+            <div id="product-content">
             <figure>
                 <img id="productPageImgMain" class="main-img img-fluid" src="/src/assets/images/bird/bird.jpg" alt="A bird">
             <figure>
@@ -54,40 +53,25 @@
       type="text/javascript"
       src="/src/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"
     ></script>
+    <script type="module">
+      let param = parent.document.URL.substring(parent.document.URL.indexOf('?') + 1, parent.document.URL.length);
+      let productId = param.includes("product") ? param.substring(param.indexOf("=")  + 1 ) : null;
+      // alert(product);
+
+      import {products} from '/src/Data/Basket.js';
+
+
+      let img = document.createElement('img');
+      img.src = products[productId].image;
+
+      let description = document.createElement('p');
+      description.innerHTML = products[productId].description;
+
+      let container = document.getElementById("product-content");
+
+      container.appendChild(img);
+      container.appendChild(description);
+
+  </script>
   </body>
 </html>
-=======
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
-<body>
-    <div id="product-content">
-
-    </div>
-
-
-    <script type="module">
-        let param = parent.document.URL.substring(parent.document.URL.indexOf('?') + 1, parent.document.URL.length);
-        let productId = param.includes("product") ? param.substring(param.indexOf("=")  + 1 ) : null;
-        // alert(product);
-
-        import {products} from '/src/Data/Basket.js';
-
-
-        let img = document.createElement('img');
-        img.src = products[productId].image;
-
-        let description = document.createElement('p');
-        description.innerHTML = products[productId].description;
-
-        let container = document.getElementById("product-content");
-
-        container.appendChild(img);
-        container.appendChild(description);
-
-    </script>
-</body>
-</html>
->>>>>>> 9d7a05065a2580f4a1dd43435d66669fb29bdbe8
