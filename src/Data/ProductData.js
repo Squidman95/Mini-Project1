@@ -18,7 +18,8 @@ export const products = [
         category: 'Food',
         subCategory: 'Dry food',
         image: 'https://m.media-amazon.com/images/I/81753eskvxL._AC_SX466_.jpg',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     },
     {
         name: 'Dog collar - Red',
@@ -38,7 +39,7 @@ export const products = [
         animal: 'Dog',
         category: 'Food',
         subCategory: 'Wet food',
-        image: '/src/assets/imgages/dog/dog_food_wet.jpg',
+        image: '/src/assets/images/dog/dog_food_wet.jpg',
         shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     },
@@ -49,7 +50,7 @@ export const products = [
         animal: 'Dog',
         category: 'Food',
         subCategory: 'Glutenfree food',
-        image: '/src/assets/imgages/dog/dog_food_glutenfree.jpg',
+        image: '/src/assets/images/dog/dog_food_glutenfree.jpg',
         shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     },
@@ -60,7 +61,7 @@ export const products = [
         animal: 'Dog',
         category: 'Toy',
         subCategory: 'Squeaker',
-        image: '/src/assets/imgages/dog/dog_seahorse_squeaker.jpg',
+        image: '/src/assets/images/dog/dog_seahorse_squeaker.jpg',
         shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     },
@@ -71,7 +72,7 @@ export const products = [
         animal: 'Cat',
         category: 'Accessory',
         subCategory: 'Bed',
-        image: '/src/assets/imgages/cat/cat_bed.jpg',
+        image: '/src/assets/images/cat/cat_bed.jpg',
         shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     },
@@ -82,7 +83,7 @@ export const products = [
         animal: 'Cat',
         category: 'Food',
         subCategory: 'Dry',
-        image: '/src/assets/imgages/cat/cat_food_dry.jpg',
+        image: '/src/assets/images/cat/cat_food_dry.jpg',
         shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     },
@@ -93,7 +94,7 @@ export const products = [
         animal: 'Cat',
         category: 'Food',
         subCategory: 'wet',
-        image: '/src/assets/imgages/cat/cat_food_wet.jpg',
+        image: '/src/assets/images/cat/cat_food_wet.jpg',
         shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     },
@@ -104,7 +105,7 @@ export const products = [
         animal: 'Cat',
         category: 'Toy',
         subCategory: 'Intelligence',
-        image: '/src/assets/imgages/cat/cat_toy_snackMouse.jpg',
+        image: '/src/assets/images/cat/cat_toy_snackMouse.jpg',
         shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     },
@@ -115,7 +116,7 @@ export const products = [
         animal: 'Bird',
         category: 'Accessory',
         subCategory: 'Cage',
-        image: '/src/assets/imgages/bird/bird_cage1.jpg',
+        image: '/src/assets/images/bird/bird_cage1.jpg',
         shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     },
@@ -126,7 +127,7 @@ export const products = [
         animal: 'Bird',
         category: 'Accessory',
         subCategory: 'Cage',
-        image: '/src/assets/imgages/bird/bird_cage2.jpg',
+        image: '/src/assets/images/bird/bird_cage2.jpg',
         shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     },
@@ -137,7 +138,7 @@ export const products = [
         animal: 'Bird',
         category: 'Food',
         subCategory: 'Food',
-        image: '/src/assets/imgages/bird/bird_food.jpg',
+        image: '/src/assets/images/bird/bird_food.jpg',
         shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     },
@@ -148,7 +149,7 @@ export const products = [
         animal: 'Rodent',
         category: 'Accessory',
         subCategory: 'Cage',
-        image: '/src/assets/imgages/rodent/rodent_cage.jpg',
+        image: '/src/assets/images/rodent/rodent_cage.jpg',
         shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     },
@@ -159,7 +160,7 @@ export const products = [
         animal: 'Rodent',
         category: 'Food',
         subCategory: 'Food',
-        image: '/src/assets/imgages/rodent/rodent_food.jpg',
+        image: '/src/assets/images/rodent/rodent_food.jpg',
         shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     },
@@ -170,7 +171,7 @@ export const products = [
         animal: 'Rodent',
         category: 'Accessory',
         subCategory: 'Bed',
-        image: '/src/assets/imgages/rodent/rodent_bed.jpg',
+        image: '/src/assets/images/rodent/rodent_bed.jpg',
         shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     },
@@ -181,7 +182,7 @@ export const products = [
         animal: 'Rodent',
         category: 'Toy',
         subCategory: 'Running Wheel',
-        image: '/src/assets/imgages/rodent/rodent_toy_runningWheel.jpg',
+        image: '/src/assets/images/rodent/rodent_toy_runningWheel.jpg',
         shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     },
