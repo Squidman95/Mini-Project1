@@ -121,11 +121,10 @@
       );
       let name = localStorage.getItem("name");
 
-      document.getElementById("userNameSpot").innerHTML = "Hello " + name;
-
       cart_count.innerHTML = selectedProducts.length;
 
       if (loggedIn != null && loggedIn === "true") {
+        document.getElementById("userNameSpot").innerHTML = "Hello " + name;
         console.log(`Logged in ${loggedIn}`);
         logged_in_elements.style.display = "flex";
         logged_out_elements.style.display = "none";
