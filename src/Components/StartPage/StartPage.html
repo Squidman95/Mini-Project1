@@ -62,16 +62,19 @@
                                 src="https://m.media-amazon.com/images/I/81753eskvxL._AC_SX466_.jpg"
                                 class="d-block w-auto h-100 mx-auto"
                                 alt="someDescribtion"
+                                onClick="clickProduct(2);"
                             />
                             <img
                                 src="https://m.media-amazon.com/images/I/81753eskvxL._AC_SX466_.jpg"
                                 class="d-block w-auto h-100 mx-auto"
                                 alt="someDescribtion"
+                                onClick="clickProduct(2);"
                             />
                             <img
                                 src="https://m.media-amazon.com/images/I/81753eskvxL._AC_SX466_.jpg"
                                 class="d-block w-auto h-100 mx-auto"
                                 alt="someDescribtion"
+                                onClick="clickProduct(2);"
                             />
                             </div>
                         </div>
@@ -82,16 +85,19 @@
                                     src="https://www.dfordog.co.uk/user/products/red-dingo-dog-collar-red.jpg"
                                     class="d-block w-auto h-100 mx-auto im"
                                     alt="someDescribtion"
+                                    onClick="clickProduct(2);"
                                 />
                                 <img
                                     src="https://www.dfordog.co.uk/user/products/red-dingo-dog-collar-red.jpg"
                                     class="d-block w-auto h-100 mx-auto"
                                     alt="someDescribtion"
+                                    onClick="clickProduct(2);"
                                 />
                                 <img
                                     src="https://www.dfordog.co.uk/user/products/red-dingo-dog-collar-red.jpg"
                                     class="d-block w-auto h-100 mx-auto"
                                     alt="someDescribtion"
+                                    onClick="clickProduct(2);"
                                 />
                             </div>
                         </div>
@@ -102,16 +108,19 @@
                                     src="https://m.media-amazon.com/images/I/81amc1cWs0L._AC_SL1500_.jpg"
                                     class="d-block w-auto h-100 mx-auto im"
                                     alt="someDescribtion"
+                                    onClick="clickProduct(1);"
                                 />
                                 <img
                                     src="https://m.media-amazon.com/images/I/81amc1cWs0L._AC_SL1500_.jpg"
                                     class="d-block w-auto h-100 mx-auto"
                                     alt="someDescribtion"
+                                    onClick="clickProduct(2);"
                                 />
                                 <img
                                     src="https://m.media-amazon.com/images/I/81amc1cWs0L._AC_SL1500_.jpg"
                                     class="d-block w-auto h-100 mx-auto"
                                     alt="someDescribtion"
+                                    onClick="clickProduct(3);"
                                 />
                             </div>
                         </div>
@@ -148,6 +157,12 @@
                 $("#nav-sidebar-placeholder").replaceWith(data);
             });
         </script>
+
+        <script>
+            function clickProduct(product){
+                location.href=`/src/Components/Product/Product.html?product=${product}`;
+            }
+        </script>    
 
         <script
             type="text/javascript"

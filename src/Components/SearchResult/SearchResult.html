@@ -72,7 +72,7 @@
                                             class="d-block w-auto h-100 mx-auto im"
                                             alt="someDescribtion"
                                         />
-                                        <img
+                                        <!-- <img
                                             src="https://m.media-amazon.com/images/I/81753eskvxL._AC_SX466_.jpg"
                                             class="d-block w-auto h-100 mx-auto"
                                             alt="someDescribtion"
@@ -81,7 +81,7 @@
                                             src="https://m.media-amazon.com/images/I/81753eskvxL._AC_SX466_.jpg"
                                             class="d-block w-auto h-100 mx-auto"
                                             alt="someDescribtion"
-                                        />
+                                        /> -->
                                     </div>
                                 </div>
 
@@ -92,7 +92,7 @@
                                             class="d-block w-auto h-100 mx-auto im"
                                             alt="someDescribtion"
                                         />
-                                        <img
+                                        <!-- <img
                                             src="https://www.dfordog.co.uk/user/products/red-dingo-dog-collar-red.jpg"
                                             class="d-block w-auto h-100 mx-auto"
                                             alt="someDescribtion"
@@ -101,7 +101,7 @@
                                             src="https://www.dfordog.co.uk/user/products/red-dingo-dog-collar-red.jpg"
                                             class="d-block w-auto h-100 mx-auto"
                                             alt="someDescribtion"
-                                        />
+                                        /> -->
                                     </div>
                                 </div>
 
@@ -112,7 +112,7 @@
                                             class="d-block w-auto h-100 mx-auto im"
                                             alt="someDescribtion"
                                         />
-                                        <img
+                                        <!-- <img
                                             src="https://m.media-amazon.com/images/I/81amc1cWs0L._AC_SL1500_.jpg"
                                             class="d-block w-auto h-100 mx-auto"
                                             alt="someDescribtion"
@@ -121,7 +121,7 @@
                                             src="https://m.media-amazon.com/images/I/81amc1cWs0L._AC_SL1500_.jpg"
                                             class="d-block w-auto h-100 mx-auto"
                                             alt="someDescribtion"
-                                        />
+                                        /> -->
                                     </div>
                                 </div>
                             </div>
@@ -147,7 +147,7 @@
                         </div>
                     </div>
                     <!-- CAROUSEL 2 -->
-                    <div class="carousel-container carousel-container-1">
+                    <!-- <div class="carousel-container carousel-container-1">
                         <div class="search-result-Carousel-container">
                             <div
                                 id="search-result-carousel-2"
@@ -259,7 +259,7 @@
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- CARDS -->
@@ -343,6 +343,30 @@
         $.get("/src/Components/Sidebar/Sidebar.html", function (data) {
             $("#Search-result-sidebar").replaceWith(data);
         });
+    </script>
+
+    <script>
+        let param = parent.document.URL.substring(parent.document.URL.indexOf('?') + 1, parent.document.URL.length);
+        let animalName = param.includes("animal") ? param.substring(param.indexOf("=")  + 1 ) : null;
+        
+        let dog = [0, 1, 2, 3, 4, 5];
+        let cat = [6, 7, 8, 9];
+        let bird = [10, 11, 12];
+        let rodent = [13, 14, 15, 16];
+        let animals;
+        switch(animalName){
+            case 'dog': animals = dog; break;
+            case 'cat': animals = cat; break;
+            case 'bird': animals = bird; break;
+            case 'rodent': animals = rodent; break;
+        }
+
+        let img = document.createElement('img');
+        img.src = 
+
+
+
+
     </script>
 </body>
 </html>
