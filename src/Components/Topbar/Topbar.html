@@ -136,20 +136,6 @@
 
       function logout() {
         localStorage.setItem("isLoggedIn", "false");
-        localStorage.removeItem("password");
-        localStorage.removeItem("name");
-        localStorage.removeItem("email");
-      }
-    </script>
-    <script>
-      function displayUserName() {
-        console.log("hello");
-        userName = window.localStorage.getItem("name");
-        console.log(userName);
-        if (userName !== null && userName !== "") {
-          userElement = document.getElementById("userNameSpot");
-          userElement.innerHTML = userName;
-        }
       }
     </script>
   </body>
