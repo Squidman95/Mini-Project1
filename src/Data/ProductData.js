@@ -9,7 +9,7 @@ export const products = [
     },
     {
         name: 'Dog food - dry',
-        id: '0',
+        id: '1',
         price: 70,
         category: 'Food',
         subCategory: 'Dry food',
@@ -17,7 +17,7 @@ export const products = [
     },
     {
         name: 'Dog collar - Red',
-        id: '0',
+        id: '2',
         price: 120,
         category: 'Accessory',
         subCategory: 'Collar',
