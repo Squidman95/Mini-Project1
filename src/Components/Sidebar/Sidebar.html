@@ -18,10 +18,10 @@
             <h5 class="filter-text">Animals     </h5>
 
             <div class="dd-flex align-items-start bd-highlight mb-2">
-                <img src="/src/assets/images/dog/dog.jpg" class="float-start p-2 bd-highlight" alt="dog">
-                <img src="/src/assets/images/cat/cat.jpg" class=" float-start p-2 bd-highlight" alt="cat">
-                <img src="/src/assets/images/bird/bird.jpg" class=" float-start p-2 bd-highlight" alt="bird">
-                <img src="/src/assets/images/rodent/rodent.jpg" class=" float-start p-2 bd-highlight" alt="rodent">
+                <img src="/src/assets/images/dog/dog.jpg" class="float-start p-2 bd-highlight" alt="dog" onClick="selectAnimal('dog')">
+                <img src="/src/assets/images/cat/cat.jpg" class=" float-start p-2 bd-highlight" alt="cat" onClick="selectAnimal('cat')">
+                <img src="/src/assets/images/bird/bird.jpg" class=" float-start p-2 bd-highlight" alt="bird" onClick="selectAnimal('bird')">
+                <img src="/src/assets/images/rodent/rodent.jpg" class=" float-start p-2 bd-highlight" alt="rodent" onClick="selectAnimal('rodent')">
             </div>
         </div>
 
@@ -101,5 +101,10 @@
         
         </script>
 
+      <script>
+        function selectAnimal(animal) {
+          location.href = `/src/Components/SearchResult/SearchResult.html?animal=${animal}`;
+        }
+      </script>
 
 </html>

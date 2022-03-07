@@ -66,12 +66,12 @@
                             </div>
                             <div class="carousel-inner h-100 w-100">
                                 <div class="carousel-item h-100 w-100 active" onClick="clickProduct(0);">
-                                    <div class="d-flex flex-row justify-content-center h-100 w-auto d-block">
-                                        <img
+                                    <div class="d-flex flex-row justify-content-center h-100 w-auto d-block" id="carousel-container-1">
+                                        <!-- <img
                                             src="https://m.media-amazon.com/images/I/81753eskvxL._AC_SX466_.jpg"
-                                            class="d-block w-auto h-100 mx-auto im"
+                                            class="d-block w-auto h-100 mx-auto"
                                             alt="someDescribtion"
-                                        />
+                                        /> -->
                                         <!-- <img
                                             src="https://m.media-amazon.com/images/I/81753eskvxL._AC_SX466_.jpg"
                                             class="d-block w-auto h-100 mx-auto"
@@ -86,12 +86,12 @@
                                 </div>
 
                                 <div class="carousel-item h-100 w-100" onClick="clickProduct(0);">
-                                    <div class="d-flex flex-row justify-content-center h-100 w-auto d-block">
-                                        <img
+                                    <div class="d-flex flex-row justify-content-center h-100 w-auto d-block" id="carousel-container-2">
+                                        <!-- <img
                                             src="https://www.dfordog.co.uk/user/products/red-dingo-dog-collar-red.jpg"
-                                            class="d-block w-auto h-100 mx-auto im"
+                                            class="d-block w-auto h-100 mx-auto"
                                             alt="someDescribtion"
-                                        />
+                                        /> -->
                                         <!-- <img
                                             src="https://www.dfordog.co.uk/user/products/red-dingo-dog-collar-red.jpg"
                                             class="d-block w-auto h-100 mx-auto"
@@ -106,12 +106,12 @@
                                 </div>
 
                                 <div class="carousel-item h-100 w-100" onClick="clickProduct(0);">
-                                    <div class="d-flex flex-row justify-content-center h-100 w-auto d-block">
-                                        <img
+                                    <div class="d-flex flex-row justify-content-center h-100 w-auto d-block" id="carousel-container-3">
+                                        <!-- <img
                                             src="https://m.media-amazon.com/images/I/81amc1cWs0L._AC_SL1500_.jpg"
-                                            class="d-block w-auto h-100 mx-auto im"
+                                            class="d-block w-auto h-100 mx-auto"
                                             alt="someDescribtion"
-                                        />
+                                        /> -->
                                         <!-- <img
                                             src="https://m.media-amazon.com/images/I/81amc1cWs0L._AC_SL1500_.jpg"
                                             class="d-block w-auto h-100 mx-auto"
@@ -265,8 +265,8 @@
                 <!-- CARDS -->
 
                 <div class="search-result-Cards align-self-center">
-                    <div class="row row-cols-3 row-cols-sm-3 g-3">
-                        <div class="col">
+                    <div class="row row-cols-3 row-cols-sm-3 g-3" id="cardContainer">
+                        <!-- <div class="col">
                             <div class="card" onClick="clickProduct(1);">
                                 <img src="/src/assets/images/dog/dog_bed.jpg" class="card-img-top" alt="card-grid-image">
                                 <div class="card-body">
@@ -319,7 +319,7 @@
                                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -345,10 +345,13 @@
         });
     </script>
 
-    <script>
+    <script type="module">
         let param = parent.document.URL.substring(parent.document.URL.indexOf('?') + 1, parent.document.URL.length);
         let animalName = param.includes("animal") ? param.substring(param.indexOf("=")  + 1 ) : null;
-        
+        import {products} from '/src/Data/ProductData.js';
+
+        console.log(animalName)
+
         let dog = [0, 1, 2, 3, 4, 5];
         let cat = [6, 7, 8, 9];
         let bird = [10, 11, 12];
@@ -361,10 +364,59 @@
             case 'rodent': animals = rodent; break;
         }
 
-        let img = document.createElement('img');
-        img.src = 
+        addImageToCarousel(animals[0], "carousel-container-1");
+        addImageToCarousel(animals[1], "carousel-container-2");
+        addImageToCarousel(animals[2], "carousel-container-3");
+        
 
+        function addImageToCarousel(index, item){
+            console.log(index, item);
+            let img = document.createElement('img');
+            img.src = products[index].image;
+            img.classList.add('d-block');
+            img.classList.add('w-auto');
+            img.classList.add('h-100');
+            img.classList.add('mx-auto');
+            document.getElementById(item).appendChild(img);
+        }
 
+        animals.forEach((animal, index) => {
+            addCardToPage(products[animal]);
+        });
+
+        function addCardToPage(data){
+            let parent = document.createElement('div');
+            parent.classList.add('col');
+
+            let card = document.createElement('div');
+            card.classList.add("card");
+            card.addEventListener('click', function(){
+                clickProduct(data.id);
+            });
+
+            let img = document.createElement('img');
+            img.classList.add("card-img-top");
+            img.src = data.image;
+
+            let cardBody = document.createElement('div');
+            cardBody.classList.add('card-body');
+
+            let cardTitle = document.createElement('h5');
+            cardTitle.innerHTML = data.name;
+
+            let cardText = document.createElement('p');
+            cardText.innerHTML = data.shortDescription;
+
+            cardBody.appendChild(cardTitle);
+            cardBody.appendChild(cardText);
+
+            card.appendChild(img);
+            card.appendChild(cardBody);
+
+            parent.appendChild(card);
+
+            document.getElementById('cardContainer').appendChild(parent);
+        }
 
 
     </script>
