@@ -59,49 +59,53 @@
       let container = document.getElementById("BasketItemContainer");
 
       //   products.forEach((item, index) => {
-      selectedProducts.forEach((item, index) => {
-        //Create elements
-        let itemContainer = document.createElement("div");
-        let img = document.createElement("img");
-        let descr = document.createElement("p");
-        let remove = document.createElement("img");
+      if (selectedProducts != null) {
+        selectedProducts.forEach((item, index) => {
+          //Create elements
+          let itemContainer = document.createElement("div");
+          let img = document.createElement("img");
+          let descr = document.createElement("p");
+          let remove = document.createElement("img");
 
-        //Init elements
-        img.src = item.image;
-        remove.src = "/src/assets/images/icons/x-icon.png";
-        descr.innerHTML = item.description;
+          //Init elements
+          img.src = item.image;
+          remove.src = "/src/assets/images/icons/x-icon.png";
+          descr.innerHTML = item.description;
 
-        // Add classes
-        itemContainer.classList.add("basket-item");
-        itemContainer.classList.add("basket-item--" + index);
+          // Add classes
+          itemContainer.classList.add("basket-item");
+          itemContainer.classList.add("basket-item--" + index);
 
-        img.classList.add("basket-item-image");
-        img.classList.add("row-cols-3");
+          img.classList.add("basket-item-image");
+          img.classList.add("row-cols-3");
 
-        remove.classList.add("basket-item-remove");
-        remove.classList.add("row-cols-3");
+          remove.classList.add("basket-item-remove");
+          remove.classList.add("row-cols-3");
 
-        descr.classList.add("description");
+          descr.classList.add("description");
 
-        remove.addEventListener("click", function () {
-          console.log("Yes?");
-          selectedProducts.splice(index, 1);
-          localStorage.setItem(
-            "selectedProducts",
-            JSON.stringify(selectedProducts)
-          );
-          window.location.reload();
+          remove.addEventListener("click", function () {
+            console.log("Yes?");
+            selectedProducts.splice(index, 1);
+            localStorage.setItem(
+              "selectedProducts",
+              JSON.stringify(selectedProducts)
+            );
+            window.location.reload();
+          });
+
+          remove.addEventListener("click", function () {
+            console.log("WORKS?");
+          });
+
+          itemContainer.appendChild(img);
+          itemContainer.appendChild(descr);
+          itemContainer.appendChild(remove);
+          document
+            .getElementById("BasketItemContainer")
+            .appendChild(itemContainer);
         });
-
-        remove.addEventListener('click', function(){console.log("WORKS?")})
-
-        itemContainer.appendChild(img);
-        itemContainer.appendChild(descr);
-        itemContainer.appendChild(remove);
-        document
-          .getElementById("BasketItemContainer")
-          .appendChild(itemContainer);
-      });
+      }
     </script>
   </body>
 </html>
