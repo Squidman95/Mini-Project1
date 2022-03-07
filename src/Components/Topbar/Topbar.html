@@ -45,7 +45,7 @@
 
             <!-- Logged in elements -->
             <div id="logged_in_elements">
-              <li id="userNameSpot"></li>
+              <p id="userNameSpot"></p>
               <li class="nav-item">
                 <a
                   class="nav-link"
@@ -118,6 +118,9 @@
       let selectedProducts = JSON.parse(
         localStorage.getItem("selectedProducts")
       );
+      let name = localStorage.getItem("name");
+
+      document.getElementById("userNameSpot").innerHTML = "Hello " + name;
 
       cart_count.innerHTML = selectedProducts.length;
 
