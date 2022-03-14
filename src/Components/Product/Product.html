@@ -34,6 +34,7 @@
         </div>
         <div class="right">
           <article id="product-description-right"></article>
+          <div id="main-price"></div>
           <div class="button-container">
             <button
               class="btn btn-outline-primary"
@@ -73,6 +74,9 @@
       let imgMain = document.createElement("img");
       imgMain.src = products[productId].image;
 
+      let price = document.createElement("div");
+      price.innerHTML = products[productId].price + " kr";
+
       // let mayAlsoLikeProductImg1 = document.createElement("img");
       // mayAlsoLikeProductImg1.src = products[mayAlsoLikeProductId1].image;
 
@@ -89,12 +93,14 @@
       let descriptionRightContainer = document.getElementById(
         "product-description-right"
       );
+      let priceContainer = document.getElementById("main-price");
 
       // let mayLikeImageContainer1 = document.getElementById("smaller-image-1");
       // let mayLikeImageContainer2 = document.getElementById("smaller-image-2");
 
       mainImageContainer.appendChild(imgMain);
       descriptionRightContainer.appendChild(description);
+      priceContainer.appendChild(price);
 
       // mayLikeImageContainer1.appendChild(mayAlsoLikeProductImg1);
       // mayLikeImageContainer2.appendChild(mayAlsoLikeProductImg2);
