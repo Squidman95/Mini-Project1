@@ -354,9 +354,11 @@
         let animalName;
         let priceMin;
         let priceMax;
+        let productsVar = getAllItems();
         params.forEach((param, index) => {
             if(param.includes("animal")){
                 animalName = param.substring(param.indexOf("=")  + 1 );
+                productsVar = getFilteredItems();
             }
             if(param.includes("minPrice")){
                 priceMin = param.substring(param.indexOf("=")  + 1 );
@@ -370,8 +372,7 @@
 
 
         // FUNCTIONLITY
-
-        let productsVar = getFilteredItems();
+        
         if(priceMin !== null && priceMin !== undefined && priceMin !== "" && priceMax !== null && priceMax !== undefined && priceMax !== ""){
             productsVar = getPriceFilteredItems(productsVar, priceMin, priceMax);
         }
@@ -386,6 +387,13 @@
 
 
         //FUNCTIONS
+
+        function getAllItems(){
+            return products.filter(function(el) {
+                return el;
+            })
+        }
+
 
         function getFilteredItems(){
             return products.filter(function(el) {
