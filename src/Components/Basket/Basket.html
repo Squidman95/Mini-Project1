@@ -65,12 +65,14 @@
           let itemContainer = document.createElement("div");
           let img = document.createElement("img");
           let descr = document.createElement("p");
+          let price = document.createElement("price");
           let remove = document.createElement("img");
 
           //Init elements
           img.src = item.image;
           remove.src = "/src/assets/images/icons/x-icon.png";
-          descr.innerHTML = item.description;
+          descr.innerHTML = item.shortDescription;
+          price.innerHTML = item.price;
 
           // Add classes
           itemContainer.classList.add("basket-item");
@@ -82,7 +84,9 @@
           remove.classList.add("basket-item-remove");
           remove.classList.add("row-cols-3");
 
-          descr.classList.add("description");
+          descr.classList.add("shortDescription");
+          price.classList.add("price");
+
 
           remove.addEventListener("click", function () {
             console.log("Yes?");
@@ -100,6 +104,7 @@
 
           itemContainer.appendChild(img);
           itemContainer.appendChild(descr);
+          itemContainer.appendChild(price);
           itemContainer.appendChild(remove);
           document
             .getElementById("BasketItemContainer")
