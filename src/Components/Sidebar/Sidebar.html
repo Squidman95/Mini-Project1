@@ -10,103 +10,137 @@
 
 
     <div class="Sidebar">
-        <!-- <div class="Sidebar-foldout-hamburger"></div> -->
-        <div class="Sidebar-Logo">
-            <img src="https://www.mcicon.com/wp-content/uploads/2020/12/Animal_Turtle_1-copy-4-600x600.jpg" alt="description of image"/>
-        </div>
+      <div class="Sidebar-Logo">
+          <img src="https://www.mcicon.com/wp-content/uploads/2020/12/Animal_Turtle_1-copy-4-600x600.jpg" alt="description of image"/>
+      </div>
 
-        <div class="row Sidebar-Items">
-            <h5 class="filter-text">Animals     </h5>
+      <div class="row Sidebar-Items">
+          <h5 class="filter-text">Animals     </h5>
 
-            <div class="dd-flex align-items-start bd-highlight mb-2">
-                <img src="/src/assets/images/dog/dog.jpg" class="float-start p-2 bd-highlight" alt="dog" onClick="selectAnimal('Dog')">
-                <img src="/src/assets/images/cat/cat.jpg" class=" float-start p-2 bd-highlight" alt="cat" onClick="selectAnimal('Cat')">
-                <img src="/src/assets/images/bird/bird.jpg" class=" float-start p-2 bd-highlight" alt="bird" onClick="selectAnimal('Bird')">
-                <img src="/src/assets/images/rodent/rodent.jpg" class=" float-start p-2 bd-highlight" alt="rodent" onClick="selectAnimal('Rodent')">
+          <div class="dd-flex align-items-start bd-highlight mb-2">
+              <img src="/src/assets/images/dog/dog.jpg" class="float-start p-2 bd-highlight" alt="dog" onClick="selectAnimal('Dog')">
+              <img src="/src/assets/images/cat/cat.jpg" class=" float-start p-2 bd-highlight" alt="cat" onClick="selectAnimal('Cat')">
+              <img src="/src/assets/images/bird/bird.jpg" class=" float-start p-2 bd-highlight" alt="bird" onClick="selectAnimal('Bird')">
+              <img src="/src/assets/images/rodent/rodent.jpg" class=" float-start p-2 bd-highlight" alt="rodent" onClick="selectAnimal('Rodent')">
+          </div>
+      </div>
+
+      <div class="row Sidebar-Items categories">
+          <h5 class="filter-text" onClick="filterCategory('accessories')">Accessories</h5>
+          <div id="accessories">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="beds" id="beds">
+              <label class="form-check-label" for="beds">
+                Beds
+              </label>
             </div>
-        </div>
-
-        <div class="row Sidebar-Items hidden">
-            <h5 class="filter-text">Accessories     </h5>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="beds">
-                <label class="form-check-label" for="beds">
-                  Beds
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="food">
-                <label class="form-check-label" for="food">
-                  Collars
-                </label>
-              </div>
-        </div>
+              <input class="form-check-input" type="checkbox" value="collars" id="collars">
+              <label class="form-check-label" for="collars">
+                Collars
+              </label>
+            </div>
+          </div>
+      </div>
 
-        <div class="row Sidebar-Items hidden" >
-            <h5 class="filter-text">Food     </h5>
+      <div class="row Sidebar-Items categories" >
+          <h5 class="filter-text" onClick="filterCategory('food')">Food     </h5>
+          <div id="food">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="vufTastic">
-                <label class="form-check-label" for="vufTastic">
-                  Dry food
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="ruff">
-                <label class="form-check-label" for="ruff">
-                  Treats
-                </label>
-              </div>
-        </div>
-
-        <div class="row Sidebar-Items hidden" >
-            <h5 class="filter-text">Containers     </h5>
+              <input class="form-check-input" type="checkbox" value="" id="dryfood">
+              <label class="form-check-label" for="dryfood">
+                Dry food
+              </label>
+            </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="red">
-                <label class="form-check-label" for="red">
-                  Transport box
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="green">
-                <label class="form-check-label" for="green">
-                  Cage
-                </label>
-              </div>
-        </div>
+              <input class="form-check-input" type="checkbox" value="" id="treats">
+              <label class="form-check-label" for="treats">
+                Treats
+              </label>
+            </div>
+          </div>
+      </div>
+
+      <div class="row Sidebar-Items categories" >
+          <h5 class="filter-text" onClick="filterCategory('containers')">Containers     </h5>
+          <div id="containers">  
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="transportbox">
+              <label class="form-check-label" for="transportbox">
+                Transport box
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="cage">
+              <label class="form-check-label" for="cage">
+                Cage
+              </label>
+            </div>
+          </div>
+      </div>
 
 
 
-        <div class="row Sidebar-Items"> 
-            <h5 class="filter-text">Price     </h5>
+      <div class="row Sidebar-Items"> 
+          <h5 class="filter-text">Price     </h5>
 
-              <div class="form-group">
-                <label for="minPrice">Min Price:</label>
-                <input type="number" class="form-control" id="minPrice">
-              </div>
-              <div class="form-group">
-                <label for="maxPrice">Max Price:</label>
-                <input type="number" class="form-control" id="maxPrice">
-              </div>
-        </div>
+            <div class="form-group">
+              <label for="minPrice">Min Price:</label>
+              <input type="number" class="form-control" id="minPrice">
+            </div>
+            <div class="form-group">
+              <label for="maxPrice">Max Price:</label>
+              <input type="number" class="form-control" id="maxPrice">
+            </div>
+      </div>
 
-        
-        <button onclick="showExtraFilters()">Show Extra Filters</button>
-        <script>
-        function showExtraFilters() {
-            let filterArray = document.getElementsByClassName("hidden");
-            console.log(Array.isArray(filterArray));
-            for(i = 0; i<filterArray.length; i++) {
-                filterArray[i].style.display = "block";
-            }
-        }
-        
-        </script>
-
+      
       <button onclick="filterOnPrice()">Filter on Price</button>
 
+      <button onclick="filterCategory()">Apply Filters</button>  
+      <script>
+      function showExtraFilters() {
+          let filterArray = document.getElementsByClassName("categories");
+          console.log(Array.isArray(filterArray));
+          for(i = 0; i<filterArray.length; i++) {
+              filterArray[i].style.display = "block";
+          }
+      }
+      </script>
 
       <script>
+        let animal;
+        let filterArray = document.getElementsByClassName("categories");
+        let param = parent.document.URL.substring(
+          parent.document.URL.indexOf("?") + 1,
+          parent.document.URL.length
+        );
+        let params = param.split("&");
+        if (!param.includes("animal")) {
+          for(i = 0; i<filterArray.length; i++) {
+                  filterArray[i].style.display = "none";
+          }
+        }
+        else {
+          animal = param.substring(param.indexOf("=")  + 1 );
+        }
+
+        // if (!param.includes("categories")) {
+        //   category = param.substring(param.indexOf("=")  + 1 );
+        //   categoryElement = document.getElementById(category);
+        //   categoryElement.style.display = "none";
+        // }
+
+        // let accessories = document.getElementById("accessories");
+        // let food = document.getElementById("food");
+        // let containers = document.getElementById("containers");
+        // accessories.style.display = "none";
+        // food.style.display = "none";
+        // containers.style.display = "none";
+
+
         function selectAnimal(animal) {
+
           let minPrice = document.getElementById("minPrice").value;
           let maxPrice = document.getElementById("maxPrice").value;
           let ref = `/src/Components/SearchResult/SearchResult.html?animal=${animal}`;
@@ -114,11 +148,49 @@
               maxPrice !== null && maxPrice !== undefined && maxPrice >= 0 && maxPrice !== ""
           ){
             ref += `&minPrice=${document.getElementById("minPrice").value}&maxPrice=${document.getElementById("maxPrice").value}`
-          } else {
-            ref = `/src/Components/SearchResult/SearchResult.html?animal=${animal}`;
           }
           location.href = ref;
         }
+
+        function filterCategory(category) {
+          let categoryArray = document.getElementsByClassName("form-check-input");
+          // let categoryArrayNames = [];
+          // for(i = 0; i<categoryArray.length; i++) {
+          //   if(categoryArray[i].checked){
+          //     console.log(categoryArray[i].value);
+          //     categoryArrayNames[i] = categoryArray[i].value;
+          //   }
+          // }
+          let ref = `/src/Components/SearchResult/SearchResult.html?animal=${animal}`;
+          let minPrice = document.getElementById("minPrice").value;
+          let maxPrice = document.getElementById("maxPrice").value;
+          if( minPrice !== null && minPrice !== undefined && minPrice >= 0 && minPrice !== "" &&
+              maxPrice !== null && maxPrice !== undefined && maxPrice >= 0 && maxPrice !== ""
+          ){
+            ref += `&minPrice=${document.getElementById("minPrice").value}&maxPrice=${document.getElementById("maxPrice").value}`
+          }
+          for(i = 0; i < categoryArray.length; i++) {
+            if(categoryArray[i].checked){
+              let cName = categoryArray[i].value;
+              ref += `&${cName}=cName`;
+              console.log(cName);
+            }
+          }
+          location.href = ref;
+        }
+        // function selectAnimal(animal) {
+        //   let minPrice = document.getElementById("minPrice").value;
+        //   let maxPrice = document.getElementById("maxPrice").value;
+        //   let ref = `/src/Components/SearchResult/SearchResult.html?animal=${animal}`;
+        //   if( minPrice !== null && minPrice !== undefined && minPrice >= 0 && minPrice !== "" &&
+        //       maxPrice !== null && maxPrice !== undefined && maxPrice >= 0 && maxPrice !== ""
+        //   ){
+        //     ref += `&minPrice=${document.getElementById("minPrice").value}&maxPrice=${document.getElementById("maxPrice").value}`
+        //   } else {
+        //     ref = `/src/Components/SearchResult/SearchResult.html?animal=${animal}`;
+        //   }
+        //   location.href = ref;
+        // }
       </script>
 
       <script>
