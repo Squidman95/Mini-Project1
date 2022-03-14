@@ -32,11 +32,7 @@
         id="BasketItemContainer"
       ></div>
 
-      <div
-      id="total"
-      class="align-self-end">
-      Total:
-    </div>
+      <div id="total" class="align-self-end">Total:</div>
 
       <button
         type="button"
@@ -64,7 +60,6 @@
 
       let container = document.getElementById("BasketItemContainer");
 
-      //   products.forEach((item, index) => {
       if (selectedProducts != null) {
         selectedProducts.forEach((item, index) => {
           //Create elements
@@ -116,12 +111,12 @@
             .appendChild(itemContainer);
         });
       }
-      
-      let total = 0;
-      selectedProducts.forEach( function (item) {
-        total+=item.price});
-      document.getElementById("total").innerHTML += total;
 
+      let total = 0;
+      selectedProducts.forEach(function (item) {
+        total += item.price;
+      });
+      document.getElementById("total").innerHTML += total;
     </script>
   </body>
 </html>

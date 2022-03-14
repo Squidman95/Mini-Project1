@@ -7,8 +7,6 @@
       <link rel="stylesheet" href="./Sidebar.css">
 
     </head>
-
-
     <div class="Sidebar">
       <div class="Sidebar-Logo">
           <img src="https://www.mcicon.com/wp-content/uploads/2020/12/Animal_Turtle_1-copy-4-600x600.jpg" alt="description of image"/>
@@ -94,19 +92,7 @@
             </div>
       </div>
 
-      
-      <!-- <button onclick="filterOnPrice()">Filter on Price</button> -->
-
       <button onclick="filterCategory()">Apply Filters</button>  
-      <script>
-      function showExtraFilters() {
-          let filterArray = document.getElementsByClassName("categories");
-          console.log(Array.isArray(filterArray));
-          for(i = 0; i<filterArray.length; i++) {
-              filterArray[i].style.display = "block";
-          }
-      }
-      </script>
 
       <script>
         let animal;
@@ -125,9 +111,7 @@
           animal = param.substring(param.indexOf("=")  + 1 );
         }
 
-
         function selectAnimal(animal) {
-
           let minPrice = document.getElementById("minPrice").value;
           let maxPrice = document.getElementById("maxPrice").value;
           let ref = `/src/Components/SearchResult/SearchResult.html?animal=${animal}`;
@@ -172,26 +156,4 @@
           location.href = ref;
         }
       </script>
-
-      <script>
-        function filterOnPrice() {
-          let minPrice = document.getElementById("minPrice").value;
-          let maxPrice = document.getElementById("maxPrice").value;
-
-          let ref = `/src/Components/SearchResult/SearchResult.html?`;
-
-          if ( minPrice !== null && minPrice !== undefined && minPrice >= 0 && minPrice !== "" &&
-              maxPrice !== null && maxPrice !== undefined && maxPrice >= 0 && maxPrice !== ""
-          ){
-            ref += `minPrice=${document.getElementById("minPrice").value}&maxPrice=${document.getElementById("maxPrice").value}`
-          } 
-
-          location.href = ref;
-        }
-      </script>
-
-      <script type="module">
-
-      </script>
-
 </html>
