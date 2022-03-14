@@ -26,17 +26,17 @@
       </div>
 
       <div class="row Sidebar-Items categories">
-          <h5 class="filter-text" onClick="filterCategory('accessories')">Accessories</h5>
+          <h5 class="filter-text">Accessories</h5>
           <div id="accessories">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="beds" id="beds">
-              <label class="form-check-label" for="beds">
+              <input class="form-check-input" type="checkbox" value="bed" id="bed">
+              <label class="form-check-label" for="bed">
                 Beds
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="collars" id="collars">
-              <label class="form-check-label" for="collars">
+              <input class="form-check-input" type="checkbox" value="collar" id="collar">
+              <label class="form-check-label" for="collar">
                 Collars
               </label>
             </div>
@@ -44,17 +44,17 @@
       </div>
 
       <div class="row Sidebar-Items categories" >
-          <h5 class="filter-text" onClick="filterCategory('food')">Food     </h5>
+          <h5 class="filter-text">Food     </h5>
           <div id="food">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="dryfood">
+              <input class="form-check-input" type="checkbox" value="dryfood" id="dryfood">
               <label class="form-check-label" for="dryfood">
                 Dry food
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="treats">
-              <label class="form-check-label" for="treats">
+              <input class="form-check-input" type="checkbox" value="treat" id="treat">
+              <label class="form-check-label" for="treat">
                 Treats
               </label>
             </div>
@@ -62,16 +62,16 @@
       </div>
 
       <div class="row Sidebar-Items categories" >
-          <h5 class="filter-text" onClick="filterCategory('containers')">Containers     </h5>
+          <h5 class="filter-text">Containers     </h5>
           <div id="containers">  
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="transportbox">
+              <input class="form-check-input" type="checkbox" value="transportbox" id="transportbox">
               <label class="form-check-label" for="transportbox">
                 Transport box
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="cage">
+              <input class="form-check-input" type="checkbox" value="cage" id="cage">
               <label class="form-check-label" for="cage">
                 Cage
               </label>
@@ -95,7 +95,7 @@
       </div>
 
       
-      <button onclick="filterOnPrice()">Filter on Price</button>
+      <!-- <button onclick="filterOnPrice()">Filter on Price</button> -->
 
       <button onclick="filterCategory()">Apply Filters</button>  
       <script>
@@ -118,25 +118,12 @@
         let params = param.split("&");
         if (!param.includes("animal")) {
           for(i = 0; i<filterArray.length; i++) {
-                  filterArray[i].style.display = "none";
+              filterArray[i].style.display = "none";
           }
         }
         else {
           animal = param.substring(param.indexOf("=")  + 1 );
         }
-
-        // if (!param.includes("categories")) {
-        //   category = param.substring(param.indexOf("=")  + 1 );
-        //   categoryElement = document.getElementById(category);
-        //   categoryElement.style.display = "none";
-        // }
-
-        // let accessories = document.getElementById("accessories");
-        // let food = document.getElementById("food");
-        // let containers = document.getElementById("containers");
-        // accessories.style.display = "none";
-        // food.style.display = "none";
-        // containers.style.display = "none";
 
 
         function selectAnimal(animal) {
@@ -154,13 +141,23 @@
 
         function filterCategory(category) {
           let categoryArray = document.getElementsByClassName("form-check-input");
-          // let categoryArrayNames = [];
-          // for(i = 0; i<categoryArray.length; i++) {
-          //   if(categoryArray[i].checked){
-          //     console.log(categoryArray[i].value);
-          //     categoryArrayNames[i] = categoryArray[i].value;
-          //   }
-          // }
+          let categoryArrayNames = [];
+          for(i = 0; i<categoryArray.length; i++) {
+            if(categoryArray[i].checked){
+              console.log(categoryArray[i].value);
+              categoryArrayNames[categoryArrayNames.length] = categoryArray[i].value;
+            }
+          }
+          localStorage.setItem(
+            "filteredProducts",
+            JSON.stringify(categoryArrayNames)
+          );
+
+          let filteredProducts = JSON.parse(
+            localStorage.getItem("filteredProducts")
+          );
+          console.log("Filtered prods in sidebar: " + filteredProducts);
+
           let ref = `/src/Components/SearchResult/SearchResult.html?animal=${animal}`;
           let minPrice = document.getElementById("minPrice").value;
           let maxPrice = document.getElementById("maxPrice").value;
@@ -169,28 +166,11 @@
           ){
             ref += `&minPrice=${document.getElementById("minPrice").value}&maxPrice=${document.getElementById("maxPrice").value}`
           }
-          for(i = 0; i < categoryArray.length; i++) {
-            if(categoryArray[i].checked){
-              let cName = categoryArray[i].value;
-              ref += `&${cName}=cName`;
-              console.log(cName);
-            }
+          if(categoryArrayNames.length > 0) {
+            ref += '&filters=true';
           }
           location.href = ref;
         }
-        // function selectAnimal(animal) {
-        //   let minPrice = document.getElementById("minPrice").value;
-        //   let maxPrice = document.getElementById("maxPrice").value;
-        //   let ref = `/src/Components/SearchResult/SearchResult.html?animal=${animal}`;
-        //   if( minPrice !== null && minPrice !== undefined && minPrice >= 0 && minPrice !== "" &&
-        //       maxPrice !== null && maxPrice !== undefined && maxPrice >= 0 && maxPrice !== ""
-        //   ){
-        //     ref += `&minPrice=${document.getElementById("minPrice").value}&maxPrice=${document.getElementById("maxPrice").value}`
-        //   } else {
-        //     ref = `/src/Components/SearchResult/SearchResult.html?animal=${animal}`;
-        //   }
-        //   location.href = ref;
-        // }
       </script>
 
       <script>
