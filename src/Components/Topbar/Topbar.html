@@ -8,7 +8,7 @@
     <link href="/src/Components/Topbar/Topbar.css" rel="stylesheet" />
   </head>
   <body onload="displayUserName()">
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <nav class="navbar sticky-top navbar-expand-sm navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="/src/Components/StartPage/StartPage.html"
           >Home</a
@@ -30,6 +30,115 @@
         <!-- <div class="collapse navbar-collapse show" id="navbarWithDropdown"> -->
         <div class="collapse navbar-collapse show" id="navbarWithDropdown">
           <ul class="navbar-nav">
+            <!-- Phone Dropdown Start -->
+            <div id="sidebar-dropdown">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  Filters
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- Dog filters start -->
+                  <li class="nav-item dropend">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      onclick="hideMenu(event)"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                    >
+                      Dog
+                    </a>
+
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#">Accessories</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Food</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Containers</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- Cat filters start -->
+                  <li class="nav-item dropend">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      onclick="hideMenu(event)"
+                    >
+                      Cat
+                    </a>
+
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#">Accessories</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Food</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Containers</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- Bird filters start -->
+                  <li class="nav-item dropend">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      onclick="hideMenu(event)"
+                    >
+                      Bird
+                    </a>
+
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#">Accessories</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Food</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Containers</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- Rodent filters start -->
+                  <li class="nav-item dropend">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      onclick="hideMenu(event)"
+                    >
+                      Rodent
+                    </a>
+
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#">Accessories</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Food</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Containers</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </div>
+
+            <!-- Phone Dropdown End -->
+
             <!-- Logged out elements -->
             <div id="logged_out_elements">
               <li class="nav-item">
@@ -93,36 +202,6 @@
             </div>
             <!-- Logged in end -->
 
-            <!-- Phone Dropdown Start -->
-            <div id="sidebar-dropdown">
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Filters
-                </a>
-
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      href="/src/Components/User/EditUserInfo.html"
-                      >Dog</a
-                    >
-                  </li>
-                </ul>
-              </li>
-            </div>
-
-            <!-- Phone Dropdown End -->
             <button
               type="button"
               class="btn btn-primary"
@@ -170,6 +249,22 @@
 
       function logout() {
         localStorage.setItem("isLoggedIn", "false");
+      }
+
+      // Supposedly a fix to the problem of having to run event.stopProgation on the filter buttons
+      // $(document).on("click", function (event) {
+      //   if (!$(event.target).closest("#menucontainer").length) {
+      //     // Hide the menus.
+      //   }
+      // });
+    </script>
+    <script>
+      function hideMenu(e) {
+        // if (!$(event.target).closest("#menucontainer").length) {
+        //   // Hide the menus.
+        // }
+        // e.preventDefault();
+        e.stopPropagation();
       }
     </script>
   </body>
