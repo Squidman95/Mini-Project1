@@ -102,6 +102,9 @@
         
         </script>
 
+      <button onclick="filterOnPrice()">Filter on Price</button>
+
+
       <script>
         function selectAnimal(animal) {
           let minPrice = document.getElementById("minPrice").value;
@@ -114,6 +117,23 @@
           } else {
             ref = `/src/Components/SearchResult/SearchResult.html?animal=${animal}`;
           }
+          location.href = ref;
+        }
+      </script>
+
+      <script>
+        function filterOnPrice() {
+          let minPrice = document.getElementById("minPrice").value;
+          let maxPrice = document.getElementById("maxPrice").value;
+
+          let ref = `/src/Components/SearchResult/SearchResult.html?`;
+
+          if ( minPrice !== null && minPrice !== undefined && minPrice >= 0 && minPrice !== "" &&
+              maxPrice !== null && maxPrice !== undefined && maxPrice >= 0 && maxPrice !== ""
+          ){
+            ref += `minPrice=${document.getElementById("minPrice").value}&maxPrice=${document.getElementById("maxPrice").value}`
+          } 
+
           location.href = ref;
         }
       </script>
