@@ -32,7 +32,12 @@
         id="BasketItemContainer"
       ></div>
 
-      <div id="total"> Total: </div>
+      <div
+      id="total"
+      class="align-self-end">
+      
+      Total:
+    </div>
 
       <button
         type="button"
@@ -103,8 +108,6 @@
             console.log("WORKS?");
           });
 
-          
-
           itemContainer.appendChild(img);
           itemContainer.appendChild(descr);
           itemContainer.appendChild(price);
@@ -114,8 +117,12 @@
             .appendChild(itemContainer);
         });
       }
-
       
+      let total = 0;
+      selectedProducts.forEach( function (item) {
+        total+=item.price});
+      document.getElementById("total").innerHTML += total;
+
     </script>
   </body>
 </html>
